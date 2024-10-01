@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    <div class="dropdown" id="burger-bt"></div>
-    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="dropdown"></div>
+    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="burger-bt">
         <i class="bi bi-list"></i>
     </button>
     <ul class="dropdown-menu">
@@ -41,7 +41,7 @@
 
 <body>
 
-        <h1>Nos bande dessinées</h1>
+    <h1>Nos bande dessinées</h1>
 
     <aside class="panier">
         <fieldset>
@@ -164,76 +164,106 @@
         </div>
     </article>
 
-    <script>
+    <script src="data/albums.js"></script>
+    <script src="data/auteurs.js"></script>
+    <script src="data/series.js"></script>
+    <script src="js/main.js"></script>
+    <script>    
 
-        // Function to create and insert 50 cards dynamically
-        function createBDCards() {
-            const container = document.createElement('div');
-            container.classList.add('row', 'justify-content-center');
-            container.id = 'album-cards-container';
-            
+function createBDCards() { 
+    const container = document.createElement('div');
+    container.classList.add('row', 'justify-content-center');
+    container.id = 'album-cards-container';
 
-            for (let i = 0; i < 50; i++) {
-                const colDiv = document.createElement('div');
-                colDiv.classList.add('col-md-2', 'mb-5');
+    // Log pour vérifier les albums
+    console.log(Array.from(albums.entries())); // Affiche le contenu de albums
 
-                const cardDiv = document.createElement('div');
-                cardDiv.classList.add('card', 'h-100');
-
-                const img = document.createElement('img');
-                img.src = `https://via.placeholder.com/150?text=BD+${i + 1}`; // Image placeholder
-                img.classList.add('card-img-top');
-
-                const cardBody = document.createElement('div');
-                cardBody.classList.add('card-body');
-
-                const title = document.createElement('h5');
-                title.classList.add('card-title');
-                title.textContent = `Titre BD ${i + 1}`; // Dynamic title
-
-                const description = document.createElement('p');
-                description.classList.add('card-text');
-                description.textContent = `Description de la BD ${i + 1}`; // Dynamic description
-
-                const price = document.createElement('p');
-                price.classList.add('card-text');
-                price.textContent = "10 €";
-
-                const voirPageBtn = document.createElement('a');
-                voirPageBtn.href = '#';
-                voirPageBtn.classList.add('btn', 'btn-danger', 'mb-2');
-                voirPageBtn.textContent = 'Voir la page';
-
-                const addToCartBtn = document.createElement('a');
-                addToCartBtn.href = '#';
-                addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2');
-                addToCartBtn.textContent = '+';
-
-                cardBody.appendChild(title);
-                cardBody.appendChild(description);
-                cardBody.appendChild(price);
-                cardBody.appendChild(voirPageBtn);
-                cardBody.appendChild(addToCartBtn);
-
-                cardDiv.appendChild(img);
-                cardDiv.appendChild(cardBody);
-
-                colDiv.appendChild(cardDiv);
-
-                container.appendChild(colDiv);
-            }
-
-            document.body.appendChild(container);
+    for (const [key, album] of albums.entries()) {
+        if (!album) {
+            console.error(`Album non trouvé pour l'index ${key}`);
+            continue; // Passe à l'itération suivante si l'album est indéfini
         }
 
-        createBDCards();
+        console.log(album);
+        let serie = series.get(album.idSerie);
+        let auteur = auteurs.get(album.idAuteur);
+        console.log(album.titre + " N°" + album.numero + " Série:" + serie.nom + " Auteur:" + auteur.nom);
+
+        const colDiv = document.createElement('div');
+        colDiv.classList.add('col-6', 'col-md-2', 'mb-4');
+
+        const cardDiv = document.createElement('div');
+        cardDiv.classList.add('card', 'h-100');
+
+        const img = document.createElement('img');
+        img.src = `albums/${serie.nom.replace(/'|!|\?|\.|"|:|\$/g, "")}-${album.numero}-${album.titre.replace(/'|!|\?|\.|"|:|\$/g, "")}.jpg`;
+        img.id = "image-id";
+        img.classList.add('card-img-top');
+
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+
+        const serialNumber = document.createElement('p');
+        serialNumber.classList.add('card-text');
+        serialNumber.id = 'serie-id';
+        serialNumber.textContent = `Numéro de série: ${album.idSerie}`; // Utiliser key ici
+
+        const albumNumber = document.createElement('p');
+        albumNumber.classList.add('card-text', 'mb-0'); 
+        albumNumber.id = 'album-id';
+        albumNumber.textContent = `Numéro d'album: ${album.numero}`; // Utiliser key ici
+
+        const title = document.createElement('h5');
+        title.classList.add('card-title');
+        title.id = 'titre-id';
+        title.textContent = album.titre;
+
+        const description = document.createElement('p');
+        description.classList.add('card-text');
+        description.id = 'auteur-id';
+        description.textContent = `Auteur: ${auteur.nom}`;
+
+        const price = document.createElement('p');
+        price.classList.add('card-text');
+        price.id = "prix-id";
+        price.textContent = album.prix + "€";
+
+        const voirPageBtn = document.createElement('a');
+        voirPageBtn.href = '#';
+        voirPageBtn.classList.add('btn', 'btn-danger', 'mb-2');
+        voirPageBtn.textContent = 'Voir la page';
+
+        const addToCartBtn = document.createElement('a');
+        addToCartBtn.href = '#';
+        addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2');
+        addToCartBtn.textContent = '+';
+
+        cardBody.appendChild(title);
+        cardBody.appendChild(description);
+        cardBody.appendChild(serialNumber);
+        cardBody.appendChild(albumNumber);
+        cardBody.appendChild(price);
+        cardBody.appendChild(voirPageBtn);
+        cardBody.appendChild(addToCartBtn);
+
+        cardDiv.appendChild(img);
+        cardDiv.appendChild(cardBody);
+
+        colDiv.appendChild(cardDiv);
+
+        container.appendChild(colDiv);
+    }
+
+    document.body.appendChild(container);
+}
 
 
 
-    </script>
 
-    <script src="js/main.js"></script>
-    <script src="data/albums.js"></script>
+createBDCards();
+
+   </script>
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
