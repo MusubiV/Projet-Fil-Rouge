@@ -1,24 +1,38 @@
+
 header {
     display: flex;
     align-items: center;
     padding: 5px;
     border: 1px solid black;
+    margin-bottom: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
+
+
 #logo-id {
     width: 15%;
 }
+
 .searchbar {
     flex-grow: 1;
     display: flex;
     justify-content: center;
 }
+
 #id-searchbar {
     width: 30%;
     padding: 10px;
     font-size: 16px;
     margin-right: 30px;
     border-radius: 15px;
-    cursor: pointer;
+    cursor: text;
 }
 
 .icons {
@@ -32,7 +46,6 @@ header {
     height: auto;
     cursor: pointer;
     margin: 25px;
-    border-radius: 15px;
 }
 
 .icons legend {
@@ -42,28 +55,44 @@ header {
 .searchbar .search-icon {
     width: 50px;
     cursor: pointer;
+
+=======
     border-radius: 0 4px 4px 0;
+
     padding: 5px;
     background-color: rgba(255, 0, 0, 0.39);
     border-radius: 15px;
 }
 
+
+
+
 aside.panier {
+    margin-top: 100px;
     position: fixed;
-    top: 150px;
+    top: 60px;
     right: 0;
-    width: 15%; 
-    height: calc(100vh - 80px);
+    width: 15%;
     background-color: #f8f9fa;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     overflow-y: auto;
     border: 2px solid black;
 }
+
+
+.container {
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+
 
 aside.panier fieldset {
     text-align: center;
@@ -76,6 +105,10 @@ aside.panier legend {
     font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: 10px;
+}
+
+#btn-voirpanier {
+    margin-top: 900px;
 }
 
 .panier-footer {
@@ -98,8 +131,178 @@ aside.panier legend {
     margin-bottom: 60px;
 }
 
-h1 {
+
+
+.container {
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 300px;
+}
+
+.card-body {
     display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card {
+    transition: transform 0.3s ease; 
+    background-color: #d3d3d3!important;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    z-index: 10; 
+    box-shadow: 0 4px 100px rgba(0, 0, 0, 0.733);
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+#prix-id {
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+#auteur-id {
+    font-weight: bold;
+}
+
+#album-cards-container {
+    margin-top: 90px;
+    width: 80%;
+    margin-left: 80px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-right: 250px; 
+    position: relative;
+}
+
+/* Media Queries pour la responsivité */
+
+@media (min-width: 1025px) {
+    #burger-bt {
+        display: none!important;
+    }
+}
+
+
+/* Pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 1024px) {
+    #logo-id {
+        width: 20%;
+    }
+
+    #id-searchbar {
+        width: 50%;
+    }
+
+    .icons img {
+        width: 40px;
+        margin: 15px;
+    }
+
+    aside.panier {
+        width: 20%;
+    }
+
+    .container {
+        padding-right: 20px;
+    }
+
+    #album-cards-container {
+        margin-right: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #dropdown {
+        display: none;
+    }
+}
+
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 768px) {
+    
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #logo-id {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    #id-searchbar {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    aside.panier {
+        display: none;
+    }
+
+    .panier-footer button {
+        width: 70%;
+    }
+
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    #album-cards-container {
+        width: 100% !important;              
+        margin: auto !important;             
+        display: flex !important;             
+        flex-wrap: wrap !important;         
+        justify-content: center !important;   
+    }
+
+    .card {
+        width: 90%!important;
+        margin: 5px !important;            
+        box-sizing: border-box !important;   
+    }
+
+    .card img {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .burger-bt {
+        margin: auto;
+    }
     justify-content: center;
 }
 
