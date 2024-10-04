@@ -5,13 +5,8 @@
 
 //(reset la valeur en cas de bug)
 if (!localStorage.getItem("panierBD"))localStorage.setItem("panierBD", JSON.stringify([]));
-//localStorage.setItem("prix",JSON.stringify([]));
-
-// Récupérer le panier depuis le localStorage
 let texte = localStorage.getItem("panierBD");
-
 //console.log(texte);
-// Convertir le texte en objet JSON
 let panierBD = JSON.parse(texte);
 let i = 0;
 var prixTotal=0;
@@ -25,10 +20,7 @@ let divAlbum = document.createElement("div");
 
 
 for (const item of panierBD) {
-  
-
   let album = albums.get(panierBD[i].numero); 
-
 console.log(album)
 
   let divAlbum = document.createElement("div");
@@ -40,13 +32,17 @@ console.log(album)
 
 
 
-  let quantiteStockee = panierBD[i].quantité;
+  let quantiteStockee = panierBD[i].quantité; // quantité stockée dans le panierBD
+  let maxQuantity = 5; // Valeur maximum par défaut pour le select
+  if (quantiteStockee > maxQuantity) {
+    maxQuantity = quantiteStockee; // Si la quantité stockée est au dessus de 5 , stocke la nouvelle donnée a la place
+  }
 
   let selectHTML = `
     <select class="quantity-select" data-index="${i}">
       `;
 
-  for (let j = 0; j <= 5; j++) {
+  for (let j = 0; j <= maxQuantity; j++) {
     selectHTML += `<option value="${j}" ${j === parseInt(quantiteStockee) ? 'selected' : ''}>${j}</option>`;
   }
   selectHTML += `</select>`;
@@ -70,7 +66,7 @@ console.log(album)
       <div class="prix-totalbd">
         <p class="prix-total" value="${parseFloat(sousTotal).toFixed(2)}">Sous-total : ${parseFloat(sousTotal).toFixed(2)}€ </p>
       </div>
-      <button class="btn-supprBD" data-index="${i}" data-key="${panierBD[i]}" onclick="ouvrirModal(this)">supprimer la bd</button>
+      <button class="btn-supprBD" data-index="${i}" data-key="${panierBD[i]}" onclick="ouvrirModal(this)">Supprimer la BD</button>
       </div>
       <p></p>
     </div>
@@ -116,7 +112,7 @@ i++;
   })
 
 
-
+  //initialise la valeur du PrixTotal au lancement de la page
   calculerPrixTotal()
   
   

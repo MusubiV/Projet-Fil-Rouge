@@ -56,7 +56,8 @@ for (const item of panierBD) {
 
     // Prix
     let prixElement = document.createElement("h5");
-    prixElement.textContent = "Sous-total: " + album.prix * panierBD[i].quantité + "€";
+    let sousTotal = album.prix * panierBD[i].quantité 
+    prixElement.textContent = "Sous-total: " + parseFloat(sousTotal).toFixed(2) + "€";
 
     // Fonction pour supprimer la carte et l'élément du panierBD
     closeButton.addEventListener("click", () => {
