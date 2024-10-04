@@ -28,135 +28,36 @@
     </div>
 
     <div class="dropdown"></div>
-    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="burger-bt">
+    <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="burger-bt">
         <i class="bi bi-list"></i>
     </button>
-    <ul class="dropdown-menu">
-        <a href="login.html"><li><button class="dropdown-item" type="button" >Se connecter</button></li></a>
-        <a href="login.html"><li><button class="dropdown-item" type="button" >S'inscrire</button></li></a>
-        <a href="login.html"><li><button class="dropdown-item" type="button" >Mon panier</button></li></a>
+    <ul class="dropdown-menu" id="burger-content">
+        <a href="login.html">
+            <li><button class="dropdown-item" type="button" id="login-burger">Se connecter</button></li>
+        </a>
+        <a href="login.html">
+            <li><button class="dropdown-item" type="button" id="signup-burger">S'inscrire</button></li>
+        </a>
+        <a href="login.html">
+            <li><button class="dropdown-item" type="button" id="panier-burger">Mon panier</button></li>
+        </a>
     </ul>
     </div>
 </header>
 
 <body>
 
-    <h1>Nos bande dessinées</h1>
-
     <aside class="panier">
         <fieldset>
             <legend>Mon panier</legend>
-            <!-- Contenu du panier ici -->
+            
         </fieldset>
         <div class="panier-footer">
             <a href=""><button type="button" id="btn-voirpanier">Voir mon panier</button></a>
         </div>
     </aside>
 
-
-
-
-
-    <!-- <article class="container">
-        <div class="row justify-content-center" id="album-cards-container">
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="" class="card-img-top" alt="..." id="img-id">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body" id="">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5">
-                <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title" id="id-title"></h5>
-                        <p class="card-text" id="id-text"></p>
-                        <p class="card-text" id="id-prix"></p>
-                        <a href="#" class="btn btn-danger">Voir la page</a>
-                        <a href="#" class="btn btn-danger">+</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article> -->
 
     <article class="container">
         <div class="row justify-content-center" id="album-cards-container">
@@ -168,102 +69,99 @@
     <script src="data/auteurs.js"></script>
     <script src="data/series.js"></script>
     <script src="js/main.js"></script>
-    <script>    
+    <script>
 
-function createBDCards() { 
-    const container = document.createElement('div');
-    container.classList.add('row', 'justify-content-center');
-    container.id = 'album-cards-container';
+        function createBDCards() {
+            const container = document.createElement('div');
+            container.classList.add('row', 'justify-content-center');
+            container.id = 'album-cards-container';
 
-    // Log pour vérifier les albums
-    console.log(Array.from(albums.entries())); // Affiche le contenu de albums
+            
+            console.log(Array.from(albums.entries()));
 
-    for (const [key, album] of albums.entries()) {
-        if (!album) {
-            console.error(`Album non trouvé pour l'index ${key}`);
-            continue; // Passe à l'itération suivante si l'album est indéfini
+            for (const [key, album] of albums.entries()) {
+                if (!album) {
+                    console.error(`Album non trouvé pour l'index ${key}`);
+                    continue; 
+                }
+
+                console.log(album);
+                let serie = series.get(album.idSerie);
+                let auteur = auteurs.get(album.idAuteur);
+                console.log(album.titre + " N°" + album.numero + " Série:" + serie.nom + " Auteur:" + auteur.nom);
+
+                const colDiv = document.createElement('div');
+                colDiv.classList.add('col-6', 'col-md-2', 'mb-4');
+
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add('card', 'h-100');
+
+                const img = document.createElement('img');
+                img.src = `albums/${serie.nom.replace(/'|!|\?|\.|"|:|\$/g, "")}-${album.numero}-${album.titre.replace(/'|!|\?|\.|"|:|\$/g, "")}.jpg`;
+                img.id = "image-id";
+                img.classList.add('card-img-top');
+
+                const cardBody = document.createElement('div');
+                cardBody.classList.add('card-body');
+
+                const serialNumber = document.createElement('p');
+                serialNumber.classList.add('card-text');
+                serialNumber.id = 'serie-id';
+                serialNumber.textContent = `Numéro de série: ${album.idSerie}`;
+
+                const albumNumber = document.createElement('p');
+                albumNumber.classList.add('card-text', 'mb-0');
+                albumNumber.id = 'album-id';
+                albumNumber.textContent = `Numéro d'album: ${album.numero}`;
+
+                const title = document.createElement('h5');
+                title.classList.add('card-title');
+                title.id = 'titre-id';
+                title.textContent = album.titre;
+
+                const description = document.createElement('p');
+                description.classList.add('card-text');
+                description.id = 'auteur-id';
+                description.textContent = `Auteur: ${auteur.nom}`;
+
+                const price = document.createElement('p');
+                price.classList.add('card-text');
+                price.id = "prix-id";
+                price.textContent = album.prix + "€";
+
+                const voirPageBtn = document.createElement('a');
+                voirPageBtn.href = '#';
+                voirPageBtn.classList.add('btn', 'btn-danger', 'mb-2');
+                voirPageBtn.textContent = 'Voir la page';
+
+                const addToCartBtn = document.createElement('a');
+                addToCartBtn.href = '#';
+                addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2');
+                addToCartBtn.textContent = '+';
+
+                cardBody.appendChild(title);
+                cardBody.appendChild(description);
+                cardBody.appendChild(serialNumber);
+                cardBody.appendChild(albumNumber);
+                cardBody.appendChild(price);
+                cardBody.appendChild(voirPageBtn);
+                cardBody.appendChild(addToCartBtn);
+
+                cardDiv.appendChild(img);
+                cardDiv.appendChild(cardBody);
+
+                colDiv.appendChild(cardDiv);
+
+                container.appendChild(colDiv);
+            }
+
+            document.body.appendChild(container);
         }
 
-        console.log(album);
-        let serie = series.get(album.idSerie);
-        let auteur = auteurs.get(album.idAuteur);
-        console.log(album.titre + " N°" + album.numero + " Série:" + serie.nom + " Auteur:" + auteur.nom);
+        createBDCards();
 
-        const colDiv = document.createElement('div');
-        colDiv.classList.add('col-6', 'col-md-2', 'mb-4');
+    </script>
 
-        const cardDiv = document.createElement('div');
-        cardDiv.classList.add('card', 'h-100');
-
-        const img = document.createElement('img');
-        img.src = `albums/${serie.nom.replace(/'|!|\?|\.|"|:|\$/g, "")}-${album.numero}-${album.titre.replace(/'|!|\?|\.|"|:|\$/g, "")}.jpg`;
-        img.id = "image-id";
-        img.classList.add('card-img-top');
-
-        const cardBody = document.createElement('div');
-        cardBody.classList.add('card-body');
-
-        const serialNumber = document.createElement('p');
-        serialNumber.classList.add('card-text');
-        serialNumber.id = 'serie-id';
-        serialNumber.textContent = `Numéro de série: ${album.idSerie}`; // Utiliser key ici
-
-        const albumNumber = document.createElement('p');
-        albumNumber.classList.add('card-text', 'mb-0'); 
-        albumNumber.id = 'album-id';
-        albumNumber.textContent = `Numéro d'album: ${album.numero}`; // Utiliser key ici
-
-        const title = document.createElement('h5');
-        title.classList.add('card-title');
-        title.id = 'titre-id';
-        title.textContent = album.titre;
-
-        const description = document.createElement('p');
-        description.classList.add('card-text');
-        description.id = 'auteur-id';
-        description.textContent = `Auteur: ${auteur.nom}`;
-
-        const price = document.createElement('p');
-        price.classList.add('card-text');
-        price.id = "prix-id";
-        price.textContent = album.prix + "€";
-
-        const voirPageBtn = document.createElement('a');
-        voirPageBtn.href = '#';
-        voirPageBtn.classList.add('btn', 'btn-danger', 'mb-2');
-        voirPageBtn.textContent = 'Voir la page';
-
-        const addToCartBtn = document.createElement('a');
-        addToCartBtn.href = '#';
-        addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2');
-        addToCartBtn.textContent = '+';
-
-        cardBody.appendChild(title);
-        cardBody.appendChild(description);
-        cardBody.appendChild(serialNumber);
-        cardBody.appendChild(albumNumber);
-        cardBody.appendChild(price);
-        cardBody.appendChild(voirPageBtn);
-        cardBody.appendChild(addToCartBtn);
-
-        cardDiv.appendChild(img);
-        cardDiv.appendChild(cardBody);
-
-        colDiv.appendChild(cardDiv);
-
-        container.appendChild(colDiv);
-    }
-
-    document.body.appendChild(container);
-}
-
-
-
-
-createBDCards();
-
-   </script>
-     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-/* Styles généraux pour le header */
+
 header {
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@ aside.panier {
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
-    padding-right: 20px; /* Ajusté pour donner de l'espace à droite */
+    padding-right: 20px; 
 }
 
 aside.panier fieldset {
@@ -142,14 +142,14 @@ aside.panier legend {
 }
 
 .card {
-    transition: transform 0.3s ease; /* Ajoute une transition pour un effet fluide */
+    transition: transform 0.3s ease; 
     background-color: #d3d3d3!important;
     cursor: pointer;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Augmente la taille de la carte à 105% */
-    z-index: 10; /* Assure que la carte survolée soit au-dessus des autres */
+    transform: scale(1.05); 
+    z-index: 10; 
     box-shadow: 0 4px 100px rgba(0, 0, 0, 0.733);
 }
 
@@ -159,14 +159,25 @@ aside.panier legend {
     object-fit: cover;
 }
 
+
+
+#prix-id {
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+#auteur-id {
+    font-weight: bold;
+}
+
 #album-cards-container {
     margin-top: 90px;
     width: 80%;
     margin-left: 80px;
     display: flex;
-    flex-wrap: wrap; /* Permet d'afficher les cartes sur plusieurs lignes */
-    justify-content: center; /* Centre les cartes */
-    margin-right: 250px; /* Créer de l'espace pour le panier */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-right: 250px; 
     position: relative;
 }
 
@@ -262,17 +273,17 @@ aside.panier legend {
     }
 
     #album-cards-container {
-        width: 100% !important;              /* Prend toute la largeur disponible */
-        margin: auto !important;             /* Centre le conteneur */
-        display: flex !important;             /* Utilise flexbox */
-        flex-wrap: wrap !important;          /* Permet aux cartes de passer à la ligne */
-        justify-content: center !important;   /* Centre les cartes */
+        width: 100% !important;              
+        margin: auto !important;             
+        display: flex !important;             
+        flex-wrap: wrap !important;         
+        justify-content: center !important;   
     }
 
     .card {
         width: 90%!important;
-        margin: 5px !important;               /* Espace entre les cartes */
-        box-sizing: border-box !important;    /* Inclut la bordure dans la largeur */
+        margin: 5px !important;            
+        box-sizing: border-box !important;   
     }
 
     .card img {
