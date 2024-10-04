@@ -55,8 +55,6 @@ header {
 .searchbar .search-icon {
     width: 50px;
     cursor: pointer;
-
-=======
     border-radius: 0 4px 4px 0;
 
     padding: 5px;
@@ -303,7 +301,7 @@ aside.panier legend {
     .burger-bt {
         margin: auto;
     }
-    justify-content: center;
+    
 }
 
 .carte {

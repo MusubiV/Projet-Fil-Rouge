@@ -22,11 +22,8 @@
             <legend>Se connecter</legend>
         </div> 
         <div class="Panier">
-            <!--<a href ="panier.html"> -->
                 <img src="img/panier.png" alt="Panier" id="cart-icon">
                 <legend>Mon panier</legend>
-            <!--</a> -->
-=======
             <img src="img/utilisateur.png" alt="Profil" id="profile-icon" />
             <legend>Se connecter</legend>
         </div>
@@ -49,7 +46,7 @@
             <li><button class="dropdown-item" type="button" id="signup-burger">S'inscrire</button></li>
         </a>
         <a href="login.html">
-            <li><button class="dropdown-item" type="button" id="panier-burger">Mon panier</button></li>
+            <li><a href ="panier.html"></a><button class="dropdown-item" type="button" id="panier-burger">Mon panier</button></a></li>
         </a>
     </ul>
     </div>
@@ -66,7 +63,7 @@
             <a href ="panier.html">
                 <button type="" id="btn-voirpanier">Voir mon panier</button>
             </a>
-            <a href=""><button type="button" id="btn-voirpanier">Voir mon panier</button></a>
+            <a href="panier.html"><button type="button" id="btn-voirpanier">Voir mon panier</button></a>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garage à BD</title>
@@ -195,7 +192,8 @@
 
                 const addToCartBtn = document.createElement('a');
                 addToCartBtn.href = '#';
-                addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2');
+                addToCartBtn.value = key;
+                addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2',"btn-ajoutbd") ;
                 addToCartBtn.textContent = '+';
 
                 cardBody.appendChild(title);
@@ -226,5 +224,6 @@
 
 </html>
     <script src="js/script.js"></script>
+    <script src="js/ajoutbd.js"></script>
 </body>
 </html>
