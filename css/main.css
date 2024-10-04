@@ -306,6 +306,112 @@ aside.panier legend {
     justify-content: center;
 }
 
+.carte {
+    display: grid;
+    grid-template-columns:  1fr; /* Ajustez la largeur de l'image si nécessaire */
+    align-items: center; /* Ajustez l'alignement vertical si nécessaire */
+    border: 3px solid #505050;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #d4d4d4;
+  }
+
+  .contenu-carte {
+    margin-left: 10px; /* Espace entre l'image et le texte */
+  }
+
+  .carte img{
+    float:left;
+    margin-right: 10px;
+  }
+
+  .carte button {
+    display: flex;
+    float:right;
+  }
+
+  .carte p {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+  }
+
+  div .prix-totalbd{
+    text-align: right;
+  }
+
+
+
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 50%;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(34, 33, 33, 0.4); 
+  }
+  
+  .modal-content {
+    background-color: #494949;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #d4d4d4;
+    width: 30%; 
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+
+
+  #total-prix {
+  display: flex ;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #d4d4d4;
+  margin-right: 10%;
+  margin-top: 1%;
+  border: #000000 1px solid;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+   
+  }
+  
+  #btn-supprimertout{
+    float : right;
+    margin-right: 10%;
+  }
+
+  .total-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+  }
 .modal {
     display: none; 
     position: fixed;
