@@ -39,6 +39,7 @@
     <ul class="dropdown-menu" id="burger-content">
             <li><button class="dropdown-item" type="button" id="login-burger" onclick="toggleLogin()">Se connecter</button></li>
         </a>
+
         <a href="panier.html">
             <li><button class="dropdown-item" type="button" id="panier-burger">Mon panier</button></li>
         </a>
@@ -57,6 +58,7 @@
             <a href ="panier.html">
                 <button type="" id="btn-voirpanier">Voir mon panier</button>
             </a>
+          
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garage à BD</title>
@@ -155,7 +157,8 @@
 
                 const addToCartBtn = document.createElement('a');
                 addToCartBtn.href = '#';
-                addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2');
+                addToCartBtn.value = key;
+                addToCartBtn.classList.add('btn', 'btn-danger', 'ms-2',"btn-ajoutbd") ;
                 addToCartBtn.textContent = '+';
 
                 cardBody.appendChild(title);
@@ -186,5 +189,6 @@
 
 </html>
     <script src="js/script.js"></script>
+    <script src="js/ajoutbd.js"></script>
 </body>
 </html>

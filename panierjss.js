@@ -4,7 +4,7 @@
 //console.log(albums.get("1"));
 
 //(reset la valeur en cas de bug)
-//localStorage.setItem("panierBD", JSON.stringify([]));
+if (!localStorage.getItem("panierBD"))localStorage.setItem("panierBD", JSON.stringify([]));
 //localStorage.setItem("prix",JSON.stringify([]));
 
 // Récupérer le panier depuis le localStorage
@@ -106,7 +106,7 @@ i++;
 
     if (albums.has(nombreA)){
       let nouvelleBD = nombreA;
-      ajouterBD(nouvelleBD , nouvelleQuantite);
+      ajouterBDr(nouvelleBD , nouvelleQuantite);
     }
     else {console.log("n'existe pas");}
     
@@ -160,11 +160,6 @@ document.getElementById("confirmDelete").addEventListener("click", confirmerSupp
 document.getElementById("cancelDelete").addEventListener("click", fermerModal);
 document.querySelector(".close").addEventListener("click", fermerModal);
 
-// Gestion des événements du modal
-document.getElementById("confirmDelete").addEventListener("click", confirmerSuppressione);
-document.getElementById("cancelDelete").addEventListener("click", fermerModale);
-document.querySelector(".close").addEventListener("click", fermerModale);
-
 
 
 
@@ -195,62 +190,6 @@ document.querySelectorAll(".quantity-select").forEach(function(selectElement) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function ouvrirModal(boutonSupprBD) {
   document.getElementById("confirmationModal").style.display = "block";
   // Stocker le bouton Supprimer dans une variable globale pour l'utiliser plus tard
@@ -268,28 +207,6 @@ function fermerModal() {
 function confirmerSuppression() {
   // Exécuter la fonction de suppression (remplacez par votre code)
   supprimerBDpanier(window.boutonASupprimer);
-  fermerModal();
-}
-
-
-function ouvrirModale(boutonToutSupprBD) {
-  document.getElementById("confirmationModal").style.display = "block";
-  // Stocker le bouton Supprimer dans une variable globale pour l'utiliser plus tard
-  window.boutonATOUTSupprimer = boutonToutSupprBD;
- 
-  
-}
-
-// Fonction pour fermer le modal
-function fermerModale() {
-  document.getElementById("confirmationModal").style.display = "none";
-  location.reload();
-}
-
-// Fonction pour confirmer la suppression
-function confirmerSuppressione() {
-  // Exécuter la fonction de suppression (remplacez par votre code)
-  supprimerTOUTBDPanier(window.boutonATOUTSupprimer);
   fermerModal();
 }
 
@@ -319,15 +236,11 @@ function calculerPrixTotal() {
 
 
 
-
-//localStorage.setItem("test2",JSON.stringify([]));
-
-
 /* Fonction d'ajout d'une nouvelle BD
 *
 *
 */
-function ajouterBD(nouvelleBD , nouvelleQuantite) {
+function ajouterBDr(nouvelleBD , nouvelleQuantite) {
   let panierBD = JSON.parse(localStorage.getItem("panierBD"));
 
 
@@ -382,9 +295,6 @@ function creerQuantiteAleatoire(){
   let nombreAleatoire = Math.floor(Math.random() * 5) + 1;
   return nombreAleatoire.toString();
 }
-
-
-
 
 
 
