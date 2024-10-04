@@ -52,8 +52,12 @@
     <aside class="panier">
         <fieldset>
             <legend>Mon panier</legend>
-            
         </fieldset>
+        <div class="panier-BD">
+            <div id="carte-container">
+
+            </div>
+        </div>
         <div class="panier-footer">
             <a href ="panier.html">
                 <button type="" id="btn-voirpanier">Voir mon panier</button>
@@ -98,7 +102,7 @@
             container.id = 'album-cards-container';
 
             
-            console.log(Array.from(albums.entries()));
+            //console.log(Array.from(albums.entries()));
 
             for (const [key, album] of albums.entries()) {
                 if (!album) {
@@ -106,10 +110,10 @@
                     continue; 
                 }
 
-                console.log(album);
+                //console.log(album);
                 let serie = series.get(album.idSerie);
                 let auteur = auteurs.get(album.idAuteur);
-                console.log(album.titre + " N°" + album.numero + " Série:" + serie.nom + " Auteur:" + auteur.nom);
+                //console.log(album.titre + " N°" + album.numero + " Série:" + serie.nom + " Auteur:" + auteur.nom);
 
                 const colDiv = document.createElement('div');
                 colDiv.classList.add('col-6', 'col-md-2', 'mb-4', 'mt-5');

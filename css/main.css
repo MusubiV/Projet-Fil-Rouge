@@ -108,15 +108,55 @@ aside.panier legend {
 }
 
 #btn-voirpanier {
-    margin-top: 20%;
+  margin-bottom: 20% !important;
+   /* Ajustez la valeur pour la hauteur désirée */
+  right: 10px; /* Ajustez la valeur pour la position horizontale */
+  background-color: red transparent; /* Couleur du bouton */
+  padding: 10px; /* Espacement interne du bouton */
+  border-radius: 5px 
 }
+
+.carte-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panierImg {
+  object-fit: cover;
+  display: flex;
+  float:left;
+  margin-right: 10px;
+  width: 50%;
+  border: 2px solid #000000;
+
+}
+
+.close-button {
+  color:rgb(233, 233, 233);
+  font-weight: bold;
+  float: right;
+  background-color: rgb(255, 47, 47);
+  padding:10px;
+  text-align: center;
+  margin-left: 80%;
+  border-radius: 35%;
+}
+
+.close-button:hover {
+  background-color: #ff8080; /* Couleur du bouton au survol */
+}
+
+.close-button:active {
+  background-color: #ff4040; /* Couleur du bouton lorsqu'on clique */
+}
+
 
 .panier-footer {
     margin-top: 20px;
     text-align: center;
     position: sticky;
     bottom: 0;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa transparent;
     padding: 10px 0;
 }
 
@@ -369,10 +409,6 @@ aside.panier legend {
    
   }
   
-  #btn-supprimertout{
-    float : right;
-    margin-right: 10%;
-  }
 
   .total-container {
     display: flex;
@@ -428,7 +464,7 @@ aside.panier legend {
 button {
     background-color: rgb(243, 7, 7);
     color: white;
-    margin: 4px !important;
+    margin: 4px ;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -438,3 +474,4 @@ button {
 .test2{
     margin-top: 10%;
 }
+

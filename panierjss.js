@@ -190,6 +190,7 @@ document.querySelectorAll(".quantity-select").forEach(function(selectElement) {
 
 
 
+
 function ouvrirModal(boutonSupprBD) {
   document.getElementById("confirmationModal").style.display = "block";
   // Stocker le bouton Supprimer dans une variable globale pour l'utiliser plus tard
